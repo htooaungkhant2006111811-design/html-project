@@ -1,0 +1,25 @@
+body{
+    background-color: aqua;
+    font:  sans-serif;
+    block-size: 200px;
+    
+}
+id{
+    font-display: block;
+    padding: 150px;
+    text-shadow: none;
+    margin: auto;
+}
+tr{
+    border-color: blue;
+    list-style: none;
+    margin: 10px;
+    margin-top: 10px;
+    padding: 100px;
+}
+th{
+   color: blueviolet;
+   margin: 100px;
+   text-decoration: solid;
+   padding: 200px;
+}

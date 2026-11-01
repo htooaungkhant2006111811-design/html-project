@@ -1,0 +1,342 @@
+/*Color Variables */
+:root {
+    --green: #2e7d32;
+    --yellow:#ffc107;
+    --black:#121212;
+    --white:#ffffff;
+    --gradient-green: linear-gradient(135deg, #1b5e20, #2e7d32,#4caf50);
+    --gradient-yelllow: linear-gradient(135deg, #ffeb3b,#ffc107,#ff9800);
+
+}
+/* Googlefont Poppins CDN link */
+@import url('https://fonts.googleapis.com/css2?family==Poppins:wgh@200;300;400;500;600;700&display=swap');
+/* Base Reset*/
+*{
+    margin:0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body{
+    min-height: 100vh;
+}
+/* Primary Button*/
+.btn-primary {
+    background: var(--green);
+    color: var(--white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3 ease;
+}
+.btn-primary:hover{
+    background: var(--yellow);
+    color: var(--black);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+/*Navigation Bar */
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: var(--gradient-green);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    z-index: 99;
+}
+/* Navbar container */
+.navbar{
+    height: 100%;
+    max-width: 1250px;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    padding: 0 50px;
+}
+/* Logo sltyles */
+.logo a{
+    font-size: 30px;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+}
+/*Navigation links container */
+.nav-links{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+/* Links list*/
+.linls{
+    display: flex;
+}
+/*Navigation list item*/
+.link li{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0 14px;
+    margin: 0 4px;
+    border-radius: 6px;
+    height: 40px;
+    transition: all 0.3s ease;
+}
+/* Navigation hover effects */
+.link li :hover{
+    background: var(--gradient-yelllow);
+}
+.link li:hover a{
+    color: var(--black);
+}
+.link li:hover.arrow{
+    color: var(--black);
+}
+/*Navigation links*/
+.link li a{
+    text-decoration: none;
+    white-space: nowrap;
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 500;
+}
+/* Dropdown arrows */
+.links li.arrow{
+    width: 22px;
+    text-align: center;
+    display: inline-block;
+    color: var(--white);
+    transition: all 0.3s ease;
+    margin-left: 6px;
+}
+/* Dropdown submenu*/
+.submenu{
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    min-width: 200px;
+    background: var(--gradient-green);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    display: none;
+    z-index: 100;
+    padding: 5px 0;
+}
+/* Submenu links */
+.submenu a{
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 500;
+    display: block;
+    padding: 10px 22px;
+    transition: all o.3 ease;
+    white-space: nowrap;
+}
+/* Submenu link hover*/
+.submenu a:hover{
+    color: var(--black);
+    background: var(--gradient-yelllow);
+    font-weight: 700;
+}
+/* Show submenu on hover*/
+.link li:hover.submenu{
+    display: block;
+}
+/* Search box container */
+.search-box{
+    position: relative;
+    height: 40px;
+    width: 40px;
+}
+/* Search icon*/
+.search-box i{
+     position: absolute;
+     height: 100%;
+     width: 100%;
+     line-height: 40px;
+     text-align: center;
+     font-size: 22px;
+     color: var(--white);
+     font-weight: 600;
+     cursor: pointer;
+     transition: all 0.3s ease;
+}
+/* Search input container*/
+.input-box{
+    position: absolute;
+    right: calc(100%-40px);
+    top: 80px;
+    height: 60px;
+    width: 300px;
+    background: var(--gradient-green);
+    border-radius: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+}
+/* Active search box*/
+.showInput.input-box{
+    top: 65px;
+    opacity: 1;
+    pointer-events: auto;
+}
+/* Search popup arrow*/
+.input-box:before{
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background: var(--gradient-green);
+    right: 10px;
+    top: -6px;
+    transform: rotate(45deg);
+}
+/* Search input field*/
+.input-box input{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    padding: 0 15px;
+    font-size: 16px;
+    border: none;
+    background: transparent;
+    color: var(--white);
+}
+/*Placeholder text*/
+.input-box input:placeholder{
+    color: rgba(255, 255, 255, 0.7);
+}
+/* Tablet responsive */
+@media(max-width:900px){
+    .navbar{
+        padding:0 20px;
+    }
+    .link li{
+    padding:0 10px;
+    margin: 0 2px;
+
+   }
+    .submenu{
+    position:absolute;
+    top:100%;
+    left:0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0., 0.2);
+    background: var(--gradient-green);
+   }
+   .submenu a{
+    padding:12px 30px;
+
+   }
+   .input-box{
+    right:50px;
+    
+   } 
+}
+/* Mobile responsive */
+@media(max-width:60px){
+    nav{
+        height:60px;
+    }
+    .navbar{
+        padding:0 10px;
+
+    }
+    .logo a{
+        font-size: 24px;
+    }
+    .btn-primary{
+        padding: 8px 16px;
+        font-size:14px;
+    }
+    .search-box{
+        height:35px;
+        width:35px;
+
+    }
+    .search-box{
+        line-height: 35px;
+        font-size: 18px;
+    }
+    .input-box{
+        top: 58px;
+        width: 200px;
+        height: 40px;
+        border-radius: 4px;
+    }
+    .input-box{
+        top: 58x;
+        width:200px;
+        height:40px;
+        border-radius: 4px;
+
+    }
+    .input-box input{
+        font-size: 13px;
+        padding: 0 12px;
+    }
+    .link li{
+        height: 35px;
+        padding: 0 6px;
+    }
+    .link li a{
+        font-size: 13px;
+    }
+}
+/* Small mobile responsible*/
+@media(max-width:400px){
+    .navbar{
+        padding: 0 8px;
+
+    }
+    .logo a{
+        font-size: 20px;
+
+    }
+    .btn-primary{
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    .search-box{
+        height: 30px;
+        width: 30px;
+    }
+    .search-box i{
+        line-height: 30px;
+        font-size: 16px;
+    }
+    .input-box{
+        top: 55px;
+        width: 160px;
+        height: 35px;
+    }
+    .input-box input{
+        font-size: 12px;
+        padding: 0 10px;
+    }
+    .link li{
+        height: 30px;
+        padding: 0 40px;
+    }
+    .link li a{
+        font-size: 12px;
+    }
+    .submenu{
+        min-width: 160px;
+    }
+    .submenu a{
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+}
+
+    
+
+
